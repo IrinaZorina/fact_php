@@ -1,0 +1,62 @@
+.chemical .number {
+    text-align: right;
+    line-height: 0.7em;
+}
+.chemical span {
+    font-size:12px;
+    width: 100%;
+    display: block;
+    line-height: 1em;
+    opacity : 0.5;
+}
+.chemical .symbol {
+    font-weight: 400;
+    font-size:20px;
+    text-align: left;
+    opacity : 1;
+    width: 90%;
+}
+.chemical .name {
+    padding-top:5px;
+    font-size: 10px;
+    text-align: left;
+}
+.chemical .mass {
+    padding-top:5px;
+    text-align: right;
+    font-size: 7px;
+    padding-right: 30px;
+
+}
+table {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+.Fl_chemical{
+    display: flex;
+    flex-direction: column;
+}
+.Fl_number{
+    justify-content: flex-start;
+    align-self: flex-end;
+    font-size: 12px;
+    opacity: 0.5;
+}
+.Fl_symbol{
+    justify-content: flex-start;
+    align-self: flex-start;
+    font-size: 20px;
+}
+.Fl_mass{
+    justify-content: flex-end;
+    align-self: flex-end;
+    opacity: 0.5;
+    font-size: 7px;
+}
+.Fl_name{
+    justify-content: center;
+    align-self: center;
+    font-size: 10px;
+    opacity: 0.5;
+}
