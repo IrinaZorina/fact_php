@@ -517,7 +517,177 @@ echo "<br>";
 	echo $array[2];
 	echo "<br>";
 ?>
+<?php
+//Создать функцию, которая сравнивает два числа и возвращает наибольшее. 
 
+	function Compare ($num1,$num2){
+		if ($num1>$num2){
+			echo $num1;
+		} else {
+			echo $num2;
+		}
+	}	
+	echo "<br>";
+	Compare (4,5);
+	echo "<br>";
 
+?>
+<?php
+//Создать функцию, которая принимает длину двух катетов и возвращает значение гипотенузы прямоугольного треугольника.
+
+	function Gip ($kat1,$kat2){
+		$gip=sqrt($kat1**2+$kat2**2);
+		echo $gip;
+	}
+	echo "<br>";
+	Gip (3,4);
+	echo "<br>";
+
+?>
+<?php
+//Создать функцию, которая принимает одно число (10). В функции создать цикл, который будет увеличивать число в 10 раз и выводить его на экран. Когда число будет больше 1 000 000, на экране должно появляться сообщение, что вы достигли предела.
+
+	function Cycle ($num){
+		while ($num<1000000){
+			$num*=10;
+			echo $num;
+		}
+		echo "Вы достигли предела.";
+	}
+	echo "<br>";
+	Cycle (10);
+	echo "<br>";
+
+?>
+<?php
+//Создать функцию, в которой объявляется массив и случайными элементами.
+
+	function arrayRand(){
+		$arrayRand=[];
+		for($i=0;$i<mt_rand(1,20);$i++){
+			$array[$i]=mt_rand(1,100);
+			echo " $array[$i]";
+		}
+	}
+	echo "<br>";
+	arrayRand();
+	echo "<br>";
+?>
+<?php
+//Создать функцию, которая принимает массив и возвращает среднеарифметическое значение массива.
+
+	function avg($ar){
+		$sumAr=0;
+		for($i=0;$i<count($ar);$i++){
+			$sumAr+=$ar[$i];
+			echo " $ar[$i]";
+		}
+		echo " ".$sumAr/($i);
+	}
+	echo "<br>";
+	$ar=[2,3,1];
+	avg($ar);
+	echo "<br>";
+?>
+<?php
+//Создать функцию, которая принимает строку. Вернуть количество слов с строке.
+
+	function num ($str){
+		$arStr=explode(" ", $str);
+		$numWords=count($arStr);
+		echo " $numWords";
+	}
+	echo "<br>";
+	$str="a b c";
+	num($str);
+	echo "<br>";
+?>
+<?php
+//Написать функцию, которая рассчитывает последовательность чисел Фибоначчи.
+function fibonacci($n,$a = 0,$b = 1)
+{
+    $arrayFib = [$a,$b];
+    for($i=1;$i<$n;$i++)
+    {
+        $arrayFib[] = $arrayFib[$i]+$arrayFib[$i-1];
+    }
+    return $arrayFib;
+}
+echo "<br>";
+print_r(fibonacci(50));
+echo "<br>";
+?>
+<?php
+//Создайте функцию, которая принимает одномерный массив и возвращает массив, заполненный случайными числами. 
+
+	function arRand($arrayRand){
+		$N=count($arrayRand);
+		for($i=0;$i<$N;$i++){
+			$arrayRand[$i]=mt_rand(1,100);
+			echo " $arrayRand[$i]";
+		}
+	}
+	echo "<br>";
+	$array=[4,5,6];
+	arRand($array);
+	echo "<br>";
+?>
+<?php
+//Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая посчитает количество слов строке.
+
+	function numStr ($str){
+		$arStr=explode(", ", $str);
+		$numWords=count($arStr);
+		echo " $numWords";
+	}
+	echo "<br>";
+	$str="HTML, CSS, PHP, BITRIX";
+	numStr($str);
+	echo "<br>";
+?>
+<?php
+//Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет в обратном порядке буквы («XIRTIB ,PHP … »).
+
+	function invStr ($string){
+		$invStr=str_split($string);
+		$N=count($invStr);
+		while($N>0){
+			$N--;
+			echo $invStr[$N];
+		}
+	}
+	echo "<br>";
+	$str="HTML, CSS, PHP, BITRIX";
+	invStr($str);
+	echo "<br>";
+?>
+<?php
+//Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет на экран длину строки.
+
+	function lenStr ($string){
+		echo strlen($string);
+	}
+	echo "<br>";
+	$str="HTML, CSS, PHP, BITRIX";
+	lenStr($str);
+	echo "<br>";
+?>
+<?php
+//Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет каждую букву на новую строку.
+
+	function newRow ($string){
+		$invStr=str_split($string);
+		$N=count($invStr);
+		$i=0;
+		while($i<$N){
+			echo $invStr[$i]."<br>";
+			$i++;
+		}
+	}
+	echo "<br>";
+	$str="HTML, CSS, PHP, BITRIX";
+	newRow($str);
+	echo "<br>";
+?>
 </body>
 </html>
