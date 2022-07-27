@@ -1,0 +1,21 @@
+.one{
+   color: black;
+    text-align: left;
+    float: left;
+    font-size: 30px;
+}
+.two{
+    color: black;
+    /*text-align: left;*/
+    float: right;
+}
+.thre{
+    color: black;
+    /*text-align: left;*/
+    float: right;
+}
+.four{
+    color: black;
+    /*text-align: left;*/
+    float: left;
+}
