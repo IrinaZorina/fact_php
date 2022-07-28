@@ -1,0 +1,237 @@
+body{
+    background-color: lightgrey;
+}
+
+.frame{
+    width: 100%;
+    height: 100px;
+    background-color: cornsilk;
+    margin-bottom: 30px;
+}
+
+.icon {
+    background-color: DarkSlateGrey;
+    color: black;
+    width: 10%;
+    height: 0px;
+}
+
+
+.grid_blok3{
+    background-color: cornsilk;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:'. grid_name grid_name grid_name .'
+                        'grid_photo grid_information grid_information grid_like grid_like'
+}
+
+.name {
+    color: black;
+    width: 80%;
+    height: 150px;
+    float: right;
+    text-align: center;
+    font-size: 30px ;
+    grid-area: grid_name;
+}
+.photo {
+    color: #2aabd2;
+    grid-area: grid_photo;
+}
+
+.like{
+    width: 90%;
+    height: auto;
+    float: left;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-area: grid_like;
+}
+.information{
+    color: black;
+    font-weight: bolder;
+    width: 90%;
+    height: auto;
+    float: left;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-area: grid_information;
+}
+
+.like{
+    text-align: start;
+    float: right;
+}
+.flex_blok0 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.flex_blok01, .flex_blok02, .flex_blok03, .flex_blok04{
+    width: 100%;
+
+}
+.img1, .img2, .img3, .img4 {
+    width: 90%;
+    padding: 20px;
+}
+
+.text1, .text2, .text3, .text4 {
+    height: auto;
+    width: auto%;
+    font-size: 30px;
+    text-align: justify-all;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 30px ;
+}
+
+.grid_blok {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
+}
+.text5, .text6, .text7, .text8 {
+    height: auto;
+    font-size: 30px;
+    text-align: justify-all;
+    padding: 0.5%;
+}
+
+.img5, .img6, .img7, .img8 {
+    text-align: center;
+}
+
+.text5, .text6, .text7, .text8 {
+    height: auto;
+    font-size: 30px;
+    text-align: justify-all;
+    padding: 0.5%;
+}
+
+.logo{
+    grid-area: logo;
+    text-align: center;
+    margin: auto;
+}
+.Masterskaya{
+    grid-area: masterskaya;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+}
+.link {
+    grid-area: link;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    font-size: 40px;
+}
+.cycles {
+    grid-area: cycles;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+}
+.header_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:' . . cycles link masterskaya logo'
+}
+
+@media screen and (max-width: 600px){
+
+    .header_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:'cycles'
+                            'link'
+                            'masterskaya'
+                            'logo';
+    }
+    .grid_blok3{
+        grid-template-columns:  1fr;
+        grid-template-rows: auto;
+        grid-template-areas:'grid_name'
+                            'grid_photo'
+                            'grid_information'
+                            'grid_like'
+    }
+    .flex_blok0 {
+        flex-direction: column;
+    }
+    .grid_blok {
+        grid-template-columns: 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+    }
+
+}
+
+@media screen and (max-width: 800px) and (min-width: 600px) {
+
+    .header_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:'cycles'
+                            'link'
+                            'masterskaya'
+                            'logo';
+    }
+    .grid_blok3{
+        grid-template-columns:  2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:'grid_name grid_name'
+                            'grid_photo grid_information'
+                            ' grid_like grid_information'
+    }
+    .flex_blok0 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grid_blok {
+        grid-template-columns: 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+
+    }
+
+}
+
+@media screen and (min-width: 1200px) and (min-width: 800px) {
+
+    .header_grid {
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+        grid-template-areas:' . cycles link masterskaya logo'
+    }
+
+    .flex_blok0 {
+        display: flex;
+        flex-direction: row;
+        /*flex-direction: row;*/
+    }
+    .flex_blok11, .flex_blok22{
+        display: flex;
+    }
+}
+
+
+@media print {
+    em, h1, h2, text1, text2, text3, text4{color: black;}
+
+    body{
+        background-color: white;
+    }
+
+}
