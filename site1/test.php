@@ -1,19 +1,23 @@
 <?php
 
- $name = "а б";
-$name_arr = explode(э$name);
-$count_name = count($name_arr);
 
-
-$i = 0;
-//$ar = array('a', 'e', 'и', 'о', 'э', 'ы', 'я', 'ю', 'е', 'ё');
-$ar = array('о');
-
-//$str = 'строка в которой искать';
-foreach ($name_arr as $value) {
-    if (in_array($value, $ar)) {
-        $i++;// делаем что-то с гласной
-    }
+function count_word($string, $count){
+    $arr = explode(' ', $string);
+    $count = count($arr);
 }
-echo $i;
 
+
+
+$glas_name= counter_glas($name);
+
+//
+//echo $name = "<h1>Бикулов Руслан</h1>";
+//
+//$name_arr = explode(' ', $name);
+//$count_name = count($name_arr);
+//global $glas_name;
+//$glas_name = counter_glas($name);
+
+
+$count_name = count_word($name);
+$glas_name =  counter_glas($name);

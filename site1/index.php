@@ -32,24 +32,32 @@ function my_time()
     $summ_day = ($day) + ($month * 31) + $year * 365;
     return $summ_day;
 }
+//Функция смены темы иконки
+function change_theme(){
+    $cur_time = date('H');
+    if ($cur_time >= 8 & $cur_time < 20) {
+        $images1 = 'images/sun.jpg';
+        echo "<img src='$images1' >";
 
+    } else {
+        $images2 = 'images/moon.jpg';
+        echo "<img src='$images2' >";
+    }
 
-
+}
+//Функция подсчета слов
+function count_word($string){
+    $arr = explode(' ', $string);
+    $count = count($arr)/2;
+    return $count;
+}
 ?>
 
 
 <main>
     <div class="icon">
         <?php
-        if ($cur_time >=8 & $cur_time < 20 ) {
-            $images1 = 'images/sun.jpg';
-            echo "<img src='$images1' >";
-
-        }
-        else {
-            $images2 = 'images/moon.jpg';
-            echo "<img src='$images2' >";
-        }
+        change_theme();
         ?>
 
     </div>
@@ -64,11 +72,8 @@ function my_time()
     <div class="name">
         <?php
         echo $name = "<h1>Бикулов Руслан</h1>";
-        $name_arr = explode(' ', $name);
-        $count_name = count($name_arr);
-        global $glas_name;
-        $glas_name= counter_glas($name);
-
+        $count_name = count_word($name);
+        $glas_name =  counter_glas($name);
 
         ?>
 
@@ -81,11 +86,9 @@ function my_time()
             небольшая мастерская, где я создаю разные разные крутые штуки. А еще
             я хочу сменить сферу деятельности и углубиться в WEB программирование,
             так как это может дать мне больше свободы.</em></h2>';
-        $self_arr = explode(' ', $self );
         echo str_replace("Всем привет!", "<h2 style='color:#a238a9'>Всем привет!</h2>", $self);
-        $count_information = count($self_arr)/2;
-        global $glas_self;
         $glas_self= counter_glas($self);
+        $count_information = count_word($self);
 
         ?>
     </div>
@@ -108,10 +111,10 @@ function my_time()
             }
 //
         }
-        global $glas_self;
-        $glas_self= counter_glas($like);
 
-        $count_like = count($like_arr)/2;
+        $glas_like= counter_glas($like);
+        $count_like = count_word($like);
+
 
 echo "<h2><em>$str</em></h2>";
 
@@ -130,10 +133,9 @@ echo "<h2><em>$str</em></h2>";
                 Объемная печать невозможна без использования уникального оборудования.
                 Классический 3D-принтер печатает изделия по принципу моделирования послойным наплавлением (FDM).
                 Устройство позволяет создавать объекты различных форм с выпуклыми поверхностями и изгибами.</div>";
-                $text1_arr = explode(' ', $text1);
-                $count_text1 = count($text1_arr)/2;
-                global $glas_text1;
-                $glas_text1= counter_glas($text1);
+                $count_text1 = count_word($text1);
+                $glas_text1 =  counter_glas($text1);
+
             ?>
         </div>
 
@@ -153,10 +155,9 @@ echo "<h2><em>$str</em></h2>";
                 </ul>
             </div>
         </div>";
-                $text2_arr = explode(' ', $text2);
-                $count_text2 = count($text2_arr)/2;
-                global $glas_text2;
-                $glas_text2= counter_glas($text2);
+
+                $count_text2 = count_word($text2);
+                $glas_text2 =  counter_glas($text2);
         ?>
     </div>
 
@@ -173,10 +174,8 @@ echo "<h2><em>$str</em></h2>";
                 <br>
                 Производители оборудования для 3D-печати постоянно совершенствуют технологии,
                 поэтому мы должны быть готовы к новым разработкам и внедрениям, всегда шагать в ногу со временем</div>";
-                $text3_arr = explode(' ', $text3);
-                $count_text3 = count($text3_arr)/2;
-                global $glas_text3;
-                $glas_text3= counter_glas($text3);
+                $count_text3 = count_word($text3);
+                $glas_text3 =  counter_glas($text3);
 ?>
         </div>
 
@@ -187,10 +186,9 @@ echo "<h2><em>$str</em></h2>";
                 echo $text4 = "<h2> Сфера использования</h2>
                 3D-принтеры пока еще не проникли в каждый дом, но во всех ключевых сферах жизнедеятельности человека они уже присутствуют.
                 3D-печать востребована в автомобилестроении, энергетике, медицине, пищевой промышленности, строительстве/дизайне, фешен-индустрии.";
-                $text4_arr = explode(' ', $text4);
-                $count_text4 = count($text4_arr)/2;
-                global $glas_text4;
-                $glas_text4= counter_glas($text4);
+
+                $count_text4 = count_word($text4);
+                $glas_text4 =  counter_glas($text4);
                 ?>
             </div>
 
@@ -215,10 +213,9 @@ echo "<h2><em>$str</em></h2>";
                 0.05-0.13 мм — по сути это и есть толщина слоя в лазерной стереолитографии. Далее включается лазер, воздействующий на те участки полимера,
                 которые соответствуют стенкам заданного объекта, вызывая их затвердевание. После этого вся платформа погружается ровно на один слой,
                 то есть на глубину 0.05-0.13 мм.";
-                $text5_arr = explode(' ', $text5);
-                $count_text5 = count($text5_arr)/2;
-                global $glas_text5;
-                $glas_text5= counter_glas($text5);
+                $count_text5 = count_word($text5);
+                $glas_text5 =  counter_glas($text5);
+
                 ?>
             </div>
         </div>
@@ -237,10 +234,9 @@ echo "<h2><em>$str</em></h2>";
                 (прочность, износостойкость, гибкость).
                 Преимущества: прочные износостойкие изделия, низкая стоимость материалов, широкие возможности
                 пост-обработки.";
-                $text6_arr = explode(' ', $text6);
-                $count_text6 = count($text6_arr)/2;
-                global $glas_text6;
-                $glas_text6= counter_glas($text6);
+
+                $count_text6 = count_word($text6);
+                $glas_text6 =  counter_glas($text6);
                 ?>
             </div>
         </div>
@@ -254,10 +250,9 @@ echo "<h2><em>$str</em></h2>";
                 Селективное лазерное спекание (SLS) — это технология аддитивного производства, в которой используется
                 мощный лазер для спекания мелких частиц полимерного порошка в прочную структуру на основе 3D-модели.
                 3D-печать по технологии SLS была популярна среди инженеров и производителей на протяжении десятилетий.";
-                $text7_arr = explode(' ', $text7);
-                $count_text7 = count($text7_arr)/2;
-                global $glas_text7;
-                $glas_text7= counter_glas($text7);
+
+                $count_text7 = count_word($text7);
+                $glas_text7 =  counter_glas($text7);
                 ?>
             </div>
         </div>
@@ -270,10 +265,9 @@ echo "<h2><em>$str</em></h2>";
                 echo $text8 = "<h2>БИО печать</h2>Биопечать — это новый раздел медицины, образовавшийся в ходе стремительного развития аддитивных технологий
                 (они же — 3D-печать). От научной фантастики до научных фактов, 3D печатные органы пробиваются в мир медицины.
                 Сначала идея 3D-печати органов для трансплантации «по требованию» звучит как нечто из фильмов.";
-                $text8_arr = explode(' ', $text8);
-                $count_text8 = count($text8_arr)/2;
-                global $glas_text8;
-                $glas_text8= counter_glas($text8);
+
+                $count_text8 = count_word($text8);
+                $glas_text8 =  counter_glas($text8);
                 ?>
 
             </div>

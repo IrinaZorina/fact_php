@@ -19,7 +19,11 @@ include 'php/lesson 3-4.php';
     include 'php/lesson 7-8.php';
     ?>
 
-
+    <h2>PHP - Функции</h2>
+    <h2>Урок 9-10</h2
+    <?php
+    include 'php/lesson 9-10.php';
+    ?>
 
 
 

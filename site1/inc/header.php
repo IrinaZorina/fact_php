@@ -3,7 +3,7 @@
 <head>
     <?php
     // не нашел как ввести наш часовой пояс 'Etc/GMT+5' не работает
-    date_default_timezone_set('UTC');
+//    date_default_timezone_set('UTC');
     $cur_time = date('H');
     //для отладки
     //    $cur_time = 10;
