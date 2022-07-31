@@ -39,15 +39,7 @@ body{
     grid-area: grid_photo;
 }
 
-.like{
-    width: 90%;
-    height: auto;
-    float: left;
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    grid-area: grid_like;
-}
+
 .information{
     color: black;
     font-weight: bolder;
@@ -68,7 +60,15 @@ body{
     margin-top: 20px;
     display: flex;
 }
-
+.like{
+    width: 90%;
+    height: auto;
+    float: left;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-area: grid_like;
+}
 .flex_blok01, .flex_blok02, .flex_blok03, .flex_blok04{
     width: 100%;
 
@@ -116,6 +116,13 @@ h2 {
     text-align: justify-all;
     padding: 0.5%;
 }
+.login{
+    grid-area: login;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    font-size: 25px;
+}
 
 .logo{
     grid-area: logo;
@@ -126,26 +133,26 @@ h2 {
     grid-area: masterskaya;
     text-align: center;
     margin: auto;
-    font-size: 30px;
+    font-size: 25px;
 }
 .link {
     grid-area: link;
     text-align: center;
     position: relative;
     margin: auto;
-    font-size: 40px;
+    font-size: 25px;
 }
 .cycles {
     grid-area: cycles;
     text-align: center;
     position: relative;
     margin: auto;
-    font-size: 30px;
+    font-size: 25px;
 }
 .header_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:' . . cycles link masterskaya logo'
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:' login cycles link masterskaya logo'
 }
 
 @media screen and (max-width: 600px){
@@ -153,7 +160,8 @@ h2 {
     .header_grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas:'cycles'
+        grid-template-areas:'login'
+                            'cycles'
                             'link'
                             'masterskaya'
                             'logo';
@@ -182,7 +190,8 @@ h2 {
     .header_grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas:'cycles'
+        grid-template-areas:'login'
+                            'cycles'
                             'link'
                             'masterskaya'
                             'logo';
@@ -212,8 +221,8 @@ h2 {
 @media screen and (min-width: 1200px) and (min-width: 800px) {
 
     .header_grid {
-        grid-template-columns: 3fr 1fr 1fr 1fr;
-        grid-template-areas:' . cycles link masterskaya logo'
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:' login cycles link masterskaya logo'
     }
 
     .flex_blok0 {

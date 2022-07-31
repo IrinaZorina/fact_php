@@ -24,15 +24,7 @@ include 'php/lesson 3-4.php';
     <?php
     include 'php/lesson 9-10.php';
     ?>
-
-
-
-
-
-
-
-
-
+</main>
 
 
 

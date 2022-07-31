@@ -105,12 +105,6 @@ h2 {
     grid-row-gap: 50px;
 
 }
-/*.text5, .text6, .text7, .text8 {*/
-/*    height: auto;*/
-/*    font-size: 30px;*/
-/*    text-align: justify-all;*/
-/*    padding: 0.5%;*/
-/*}*/
 
 .img5, .img6, .img7, .img8 {
     text-align: center;
@@ -124,6 +118,11 @@ h2 {
     padding: 0.5%;
 }
 
+.login{
+    grid-area: login;
+    text-align: center;
+    margin: auto;
+}
 .logo{
     grid-area: logo;
     text-align: center;
@@ -151,8 +150,8 @@ h2 {
 }
 .header_grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:' . cycles link masterskaya logo'
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:' login cycles link masterskaya logo'
 }
 
 @media screen and (max-width: 600px){
@@ -160,7 +159,8 @@ h2 {
     .header_grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas:'cycles'
+        grid-template-areas:'login'
+                            'cycles'
                             'link'
                             'masterskaya'
                             'logo';
@@ -189,7 +189,8 @@ h2 {
     .header_grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas:'cycles'
+        grid-template-areas:'login'
+                            'cycles'
                             'link'
                             'masterskaya'
                             'logo';
@@ -219,8 +220,8 @@ h2 {
 @media screen and (min-width: 1200px) and (min-width: 800px) {
 
     .header_grid {
-        grid-template-columns: 3fr 1fr 1fr 1fr;
-        grid-template-areas:' . cycles link masterskaya logo'
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:' login cycles link masterskaya logo'
     }
 
     .flex_blok0 {

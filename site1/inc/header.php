@@ -28,9 +28,10 @@
 <body>
 <header>
     <section class="header_grid">
+        <div class="login"><a href="login.php"><h1> Вход и регистрация</h1></a></div>
         <div class="cycles"><a href="cycles.php"><h1> Задачи PHP</h1></a></div>
         <div class="logo"><img src="images/2.png" style="width:150px;"></div>
         <div class="Masterskaya"><h1> <a href="index.php">Мастерская 3D печати</a></h1></div>
-        <div class="link"> <a href="table.php">Таблица Менделеева</a></div>
+        <div class="link"> <h1><a href="table.php">Таблица Менделеева</a></h1></div>
     </section>
 </header>

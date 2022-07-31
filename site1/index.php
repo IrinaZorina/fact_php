@@ -19,19 +19,7 @@ function counter_glas($name){
     return $counter_glas;
 }
 
-//Функция времени
-function my_time()
-{
-    $today = date('d-m-Y');
-    $my_birthday = '28-11-1990';
-    $arr_today = explode('-', $today);
-    $arr_my_birthday = explode('-', $my_birthday);
-    $day = $arr_today[0] - $arr_my_birthday[0];
-    $month = $arr_today[1] - $arr_my_birthday[1];
-    $year = $arr_today[2] - $arr_my_birthday[2];
-    $summ_day = ($day) + ($month * 31) + $year * 365;
-    return $summ_day;
-}
+
 //Функция смены темы иконки
 function change_theme(){
     $cur_time = date('H');
