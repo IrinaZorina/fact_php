@@ -1,15 +1,14 @@
 <?php
-print_r($_POST);
-echo "<br>";
+//print_r($_POST);
+//echo "<br>";
 
 $login0 = '21232f297a57a5a743894a0e4a801fc3';// admin
 $pass0 = '21232f297a57a5a743894a0e4a801fc3';// admin
 //$login1 = 0;
 //$pass1 = 0;
-if (array_key_exists('login' and 'password', $_POST)){
+
     $login1 = md5($_POST['login']);
     $pass1 = md5($_POST['password']);
-}
 
 if (($login1 == $login0) and $pass1 == $pass0){
 
