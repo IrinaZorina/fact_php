@@ -166,11 +166,10 @@
             for ($i = 0; $i < $n; $i++) {
                 $arr[$i] = rand(1, 100);
             }
-            for ($k = 0; $k < count($arr); $k++){
-                if ($arr[$k] % 2 == 0){
-                $s += $arr[$k];
-            }
-                else $c++;
+            for ($k = 0; $k < count($arr); $k++) {
+                if ($arr[$k] % 2 == 0) {
+                    $s += $arr[$k];
+                } else $c++;
             }
             echo "<pre>";
             print_r($arr);
@@ -183,70 +182,199 @@
     </div>
 </section>
 <section>
-        <div class="array_task">
-            <h1> Задачи с функциями(19слайд)</h1>
-        </div>
-        <div class="function_tasks">
-            <div class="ft_1">
-                <h3>Задание 1</h3>
-                <?php
-                $str = "Возможно здесь какой-то текст и он очень важен, не для меня, конечно.";
-                if (mb_strlen($str) > 5) {
-                    $a = mb_substr($str, 5);
-                    $a = str_replace(".", "...", $a);
-                    echo $a;
-                }
-                if (mb_strlen($str) < 5) {
-                    echo $str;
-                }
-                ?>
-            </div>
-            <div class="ft_1">
-                <h3>Задание 2</h3>
-                <?php
-                $str = "Here again some text and maybe it is very important for me. I love cement btw.";
-                $str = str_replace("a","1",$str);
-                $str = str_replace("b","2",$str);
-                $str = str_replace("c","3",$str);
+    <div class="array_task">
+        <h1> Задачи с функциями(19слайд)</h1>
+    </div>
+    <div class="function_tasks">
+        <div class="ft_1">
+            <h3>Задание 1</h3>
+            <?php
+            $str = "Возможно здесь какой-то текст и он очень важен, не для меня, конечно.";
+            if (mb_strlen($str) > 5) {
+                $a = mb_substr($str, 5);
+                $a = str_replace(".", "...", $a);
+                echo $a;
+            }
+            if (mb_strlen($str) < 5) {
                 echo $str;
-                ?>
-            </div>
-            <div class="ft_1">
-                <h3>Задание 3</h3>
-                <?php
-                $str = "abc abc abc";
-                $a = mb_strlen($str)-1;
-                echo "Последняя b находится на $a месте";
-                ?>
-            </div>
-            <div class="ft_1">
-                <h3>Задание 4</h3>
-                <?php
-                $str = 'html css php';
-                $a = explode(" ", $str);
-                echo "<pre>";
-                print_r($a);
-                echo "</pre>";
-                ?>
-            </div>
-            <div class="ft_1">
-                <h3>Задание 5</h3>
-                <?php
-                $d1 = date_create("10-02-2015");
-                $d2 = date_create("27-09-2021");
-                $diff = date_diff($d1,$d2);
-                echo "Разница между датами " . $diff->days . " дней";
-                ?>
-            </div>
-            <div class="ft_1">
-            </div>
+            }
+            ?>
         </div>
+        <div class="ft_1">
+            <h3>Задание 2</h3>
+            <?php
+            $str = "Here again some text and maybe it is very important for me. I love cement btw.";
+            $str = str_replace("a", "1", $str);
+            $str = str_replace("b", "2", $str);
+            $str = str_replace("c", "3", $str);
+            echo $str;
+            ?>
+        </div>
+        <div class="ft_1">
+            <h3>Задание 3</h3>
+            <?php
+            $str = "abc abc abc";
+            $a = mb_strlen($str) - 1;
+            echo "Последняя b находится на $a месте";
+            ?>
+        </div>
+        <div class="ft_1">
+            <h3>Задание 4</h3>
+            <?php
+            $str = 'html css php';
+            $a = explode(" ", $str);
+            echo "<pre>";
+            print_r($a);
+            echo "</pre>";
+            ?>
+        </div>
+        <div class="ft_1">
+            <h3>Задание 5</h3>
+            <?php
+            $d1 = date_create("10-02-2015");
+            $d2 = date_create("27-09-2021");
+            $diff = date_diff($d1, $d2);
+            echo "Разница между датами " . $diff->days . " дней";
+            ?>
+        </div>
+        <div class="ft_1">
+        </div>
+    </div>
 </section>
 <section>
     <div class="array_task">
         <h1> Задачи с функциями(25.07)</h1>
     </div>
     <div class="Func_steps">
+        <div class="Func_step1">
+            <h3>Задание 5(13слайд)</h3>
+            <?php
+            $arr = [];
+            $sarr = [];
+            $sum = [];
+            function Tas4($arr)
+            {
+                $sum = 0;
+                $a = mt_rand(2, 10);
+                for ($i = 0; $i < $a; $i++) {
+                    $arr [$i] = rand(0, 100);
+                    $sum += $arr[$i];
+                }
+                $sarr = $sum / $a;
+                return $sarr;
+
+            }
+
+            echo "Среднеарифметическое значение массива - " . Tas4($sarr);
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 6(13слайд)</h3>
+            <?php
+            function CountVar()
+            {
+                $a = "very important information for you, user";
+                $count = str_word_count($a);
+                return $count;
+            }
+
+            echo "Слов в строке - " . CountVar();
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 7(13слайд)</h3>
+            <?php
+            function Fibonacci($i)
+            {
+                if ($i == 0) return 0;
+                if ($i == 1 || $i == 2) {
+                    return 1;
+                } else {
+                    return Fibonacci($i - 1) + Fibonacci($i - 2);
+                }
+            }
+
+            for ($i = 0; $i <= 15; $i++) {
+                echo Fibonacci($i) . '<br>';
+            }
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 1(14слайд)</h3>
+            <?php
+            function ARR()
+            {
+                $arr = [1, 2, 3, 4, 5];
+                foreach ($arr as $key => &$value) {
+                    $value = mt_rand(1, 15);
+                }
+                return $arr;
+            }
+
+            echo '<pre>';
+            print_r(ARR());
+            echo '</pre>';
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 2(14слайд)</h3>
+            <?php
+            $a = null;
+            function Countstr($a)
+            {
+                $str = "HTML, CSS, PHP, BITRIX";
+                $a = str_word_count($str);
+                return $a;
+            }
+
+            echo Countstr($a) . ' - слова в строке';
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 3(14слайд)</h3>
+            <?php
+            function Reverse()
+            {
+                $str = 'HTML, CSS, PHP, BITRIX';
+                $b = strrev($str);
+                return $b;
+            }
+
+            echo Reverse();
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 4(14слайд)</h3>
+            <?php
+            $str = "HTML, CSS, PHP, BITRIX";
+            function lengthStr($str)
+            {
+                echo strlen($str);
+            }
+
+            echo lengthStr($str) . " - Длина строки";
+            ?>
+        </div>
+        <div class="Func_step1">
+            <h3>Задание 5(14слайд)</h3>
+            <?php
+            $str = "HTML, CSS, PHP, BITRIX";
+            function Anyletter($str)
+            {
+                $a = str_split($str);
+                $k = count($a);
+                $i = 0;
+                while ($i < $k) {
+                    echo $a[$i] . '<br>';
+                    $i++;
+                }
+            }
+
+            $str = str_replace(array(","), '', $str);
+            $str = str_replace(array(" "), '', $str);
+            Anyletter($str);
+            ?>
+        </div>
 
     </div>
 </section>

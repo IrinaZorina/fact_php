@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(1);
 setlocale(LC_ALL, "russian");
 $day = strftime('%d');
 $mon = strftime('%B');
@@ -21,8 +23,24 @@ $year = strftime('%Y');
     <nav>
         <p class="task_math"><a href="php_tasks.php" target="_blank">Math's tasks</a> </p>
     </nav>
+    <nav>
+        <?php
+        if ($_SESSION['user']){
+            echo '<p class="Log_out"><a href="index.php">Log out</a></p>';
+        }else{
+            echo '<p class ="Log_In"><a href="authorization.php">Log In</a> </p>';
+        }
+        ?>
+
+    </nav>
 </header>
 <main>
+    <?php
+    if ($_SESSION['user']){
+        echo '<p class="Message_in">' . $_SESSION['user'] . '</p>';
+    }
+    unset($_SESSION['user']);
+    ?>
     <nav class="today_is">
         <?php
         echo "Сегодня $day число, $mon месяц, $year год."
@@ -40,34 +58,40 @@ $year = strftime('%Y');
             </div>
             <div class="block_1">
                 <?php
-               $str = "Всем привет! Расскажу пару слов о себе. Мне 24, учился на программиста, но тогда не придавал этому значения, после получения некого стороннего рабочего опыта, уверенно понял, что хочу связать свою жизнь с программированием и готов для этого на многое. Есть пару хобби: я заядлый киноман и разбираюсь в кальянной индустрии.";
-                $a = strpos(
-                    'Всем привет! Расскажу пару слов о себе. Мне 24, учился на программиста, но тогда не придавал этому значения, после получения некого стороннего рабочего опыта, уверенно понял, что хочу связать свою жизнь с программированием и готов для этого на многое. Есть пару хобби: я заядлый киноман и разбираюсь в кальянной индустрии.',
-                    '!');
-                $a++;
-                $b = substr($str, $a);
-                if (strlen($str) > $a) {
-                    $c = substr($str, 0, $a);
-                    $c =  '<div style ="color: red">' . $c . '</div>';
-                    echo '<p>'. '<div class="func_st_1">' .$c . '</div>' . '<div class="func_st_1">' .$b . '</div>' . '</p>';
-                }
+                $str = "Всем привет! Расскажу пару слов о себе. Мне 24, учился на программиста, но тогда не придавал этому значения, после получения некого стороннего рабочего опыта, уверенно понял, что хочу связать свою жизнь с программированием и готов для этого на многое. Есть пару хобби: я заядлый киноман и разбираюсь в кальянной индустрии.";
+                function FirstWordsColor($str){
 
+                    $a = strpos(
+                        'Всем привет! Расскажу пару слов о себе. Мне 24, учился на программиста, но тогда не придавал этому значения, после получения некого стороннего рабочего опыта, уверенно понял, что хочу связать свою жизнь с программированием и готов для этого на многое. Есть пару хобби: я заядлый киноман и разбираюсь в кальянной индустрии.',
+                        '!');
+                    $a++;
+                    $b = substr($str, $a);
+                    if (strlen($str) > $a) {
+                        $c = substr($str, 0, $a);
+                        $c = '<div style ="color: red">' . $c . '</div>';
+                        echo '<p>' . '<div class="func_st_1">' . $c . '</div>' . '<div class="func_st_1">' . $b . '</div>' . '</p>';
+                    }
+                }
+                FirstWordsColor($str);
                 ?>
             </div>
             <div class="block_2">
                 <?php
                 $str = 'Касательно курсов, хочется сказать, что мне все нравится. Очень интересно и информативно, также эти курсы оставляют интересные задачи после занятий, в которых нужно разобраться уже самому, чтобы пройденая тема обрела краски. Очень интересно.';
-                $a = explode(" ", $str);
-                foreach ($a as $key => $value){
-                    if (($key % 2) == 0){
-                        $value = '<span class="func_st_1" style ="color: blue">' . $value . " " . '</span>';
+                function secondWordColor($str)
+                {
+                    $a = explode(" ", $str);
+                    foreach ($a as $key => $value) {
+                        if (($key % 2) == 0) {
+                            $value = '<span class="func_st_1" style ="color: blue">' . $value . " " . '</span>';
                             echo $value;
-                    }
-                    else{
-                        $value = '<span class="func_st_1" style ="color: teal">' . $value . " " . '</span>';
+                        } else {
+                            $value = '<span class="func_st_1" style ="color: teal">' . $value . " " . '</span>';
                             echo $value;
+                        }
                     }
                 }
+                secondWordColor($str);
                 ?>
             </div>
         </div>
@@ -139,6 +163,7 @@ $year = strftime('%Y');
     <footer>
 <?php
         echo "<br>";
+        function Vowels_Words($str){
         $str = file_get_contents('index.php');
         $strVowel = file_get_contents('index.php');
         $str = preg_replace("/[a-zA-Z]/i", "", $str);
@@ -152,6 +177,8 @@ $year = strftime('%Y');
         echo "<br>";
         echo count($tempWords) . " - слов на сайте";
         echo "<br>";
+        }
+        Vowels_Words($str);
         ?>
 
     </footer>
