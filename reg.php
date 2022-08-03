@@ -689,6 +689,5 @@ echo "<br>";
 	newRow($str);
 	echo "<br>";
 ?>
-
 </body>
 </html>

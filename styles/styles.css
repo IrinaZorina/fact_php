@@ -1,5 +1,5 @@
 body{
-    background-color: darkorange;
+    /*background-color: darkorange;*/
     height: 800px;
     
 }
@@ -7,17 +7,22 @@ body{
 header{
     height: 200px;
 }
-
+footer {
+    display: block;
+    background-color: #3b444b !important;
+    border: #3b444b;
+} 
 .grid1{
     background-color: #3b444b;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: auto;
-    grid-template-areas: "header_left header header_img";
+    grid-template-areas: "header_left header_mid header header_img";
 }
 .grid1 div{
     background-color: #3b444b;
 }
+
 .grid2{
     /*background-color: #fffdd0;*/
     display: grid;
@@ -42,6 +47,12 @@ header{
 .button{
     line-height: 200px;
     grid-area: header;
+}
+.auth{
+    align-self: center;
+    display: grid;
+    line-height: 200px;
+    grid-area: header_mid;
 }
 .photo{
     grid-area: left;

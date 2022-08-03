@@ -13,9 +13,11 @@
 		$h=date('H');
 		if ($h > $h1 && $h < $h2){
 				$gridBack="#fffdd0";
+				$ftrClr="#fffdd0";
 				$fontColor="black";
 			} else {
 				$gridBack="#3b444b";
+				$ftrClr="#3b444b";
 				$fontColor="white";
 			}	
 		echo '<section class="grid2" style="background-color:'.$gridBack.'; color: '.$fontColor.'">';

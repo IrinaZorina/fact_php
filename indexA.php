@@ -1,12 +1,3 @@
-<?php
-
-if (isset($_POST['color'])){
-	$color=$_POST['color'];
-	setcookie('color', $color , time()+3600*24*7);
-	
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,18 +7,8 @@ if (isset($_POST['color'])){
 	<title>AboutMe</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-	<?php
-		if ($_POST['color']=="darkorange"){
-			$clr='darkorange';
-		} elseif ($_POST['color']=="#3399ff"){
-			$clr='#3399ff';
-		} elseif ($_POST['color']=="#00cc99"){
-			$clr='#00cc99';
-		} elseif (!isset($_POST['color'])){
-			$clr=$_COOKIE['color'];
-		}
-	?>
-<body style="background-color:<?php echo $clr; ?>">
+
+<body>
 
 <!-- 	<header class="page-header">
 		<div class="img-logo"></div>
@@ -43,11 +24,7 @@ if (isset($_POST['color'])){
 		include 'picture.php';
 		timePage (8, 20);
 	?>
-	<div class="auth" align="center" valign="middle">
-			<form action="_auth.php" target="_blank" title="Вход">
-   			<button>Вход</button>
- 			</form>
- 		</div>
+
 		<div class="button" align="center" valign="middle">
 			<form action="table.html" target="_blank" title="Группа элементов">
    			<button>Переход к таблице</button>
@@ -184,8 +161,8 @@ if (isset($_POST['color'])){
 			</div>
 		</div>
 	</div>	
-
-<footer style="background-color: <?php echo $ftrClr; ?>">  
+	
+<footer>  
 <?php
 echo "<br>";
 function pageCount ($page){
@@ -206,21 +183,19 @@ function pageCount ($page){
 	pageCount ('index.php');
 	echo "<br>";
 ?>	
-<form action="" method="post">
+	
+	<form action="" method="post">
 	<p>
-		<label>
-			Выберите:
-		</label>
-		<select name="color">
-			<option value="darkorange">Оранжевый</option>
-			<option value="#3399ff">Голубой</option>
-			<option value="#00cc99">Зеленый</option>
-		</select>
+		login <input type="text" name="login"><br>
 	</p>
 	<p>
+		password <input type="text" name="password"><br>
+	</p>
+		<p>
 		<button type="submit">SEND</button>
 	</p>
 	</form>
+
 
 </footer> 
 </body>
