@@ -1,4 +1,12 @@
 <?php
+include_once '../inc/header.php';
+$_COOKIE['page'] = 'lesson 7-8.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+?>
+<p>PHP - Строки</p>
+<p>Урок 7-8</p>
+<br>
+<?php
 //задача из урока перед презентацией.
 $a = 'hallo';
 
@@ -165,6 +173,11 @@ $year = $array22[2] - $array33[2];
 $summ_day = ($day) + ($month * 31) + $year*365;
 echo $summ_day . " дней";
 
-
-
 ?>
+<main>
+
+</main>
+<?php
+include_once '../inc/footer.php';
+?>
+

@@ -1,6 +1,7 @@
 
-<footer>
+<footer style="background-color: <?php if (isset( $_SESSION['color'])){echo $_SESSION['color']; }?>">
     <?php
+    session_start();
     //Функция времени
     function my_time()
     {

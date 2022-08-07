@@ -1,4 +1,11 @@
 <?php
+include_once '../inc/header.php';
+$_COOKIE['page'] = 'lesson 5-6.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+?>
+<p>PHP - Массивы</p>
+<p>Урок 5-6</p>
+<?php
 
 //$arr1 = array('яблоко', 'ананас', 'банан');
 //print_r($arr1);
@@ -102,6 +109,7 @@ for ($i = 0; $i <10; $i++) {
 }
 echo '<pre>';
 print_r($arr4);
+echo '</pre>';
 $inv = 0;
 for ($u = 9; $u > 0; $u--) {
    $inv = "$inv" . " , " . "$arr4[$u]";
@@ -109,7 +117,7 @@ for ($u = 9; $u > 0; $u--) {
 $inv1 = explode(' , ' , $inv);
 echo '<pre>';
 print_r($inv1);
-
+echo '</pre>';
 //Задача 3
 echo '<hr>';
 echo 'Задача 3';
@@ -146,6 +154,7 @@ for ($i = 0; $i <$n; $i++){
 }
 echo '<pre>';
 print_r($arr6);
+echo '</pre>';
 //echo min($arr6);
 
 $min = null;
@@ -242,9 +251,9 @@ foreach ($arr9 as $key => $value){// нашли максимум темпера�
 
 print_r($arr10);
 
-//Задача 3 стр 14 не доделал
+//Задача 3 стр 14
 echo '<hr>';
-echo 'Задача 3 не доделал';
+echo 'Задача 3 ';
 echo '<br>';
 $arr11 =[
     [1, 2, 3, 4, 5, 6],
@@ -275,28 +284,39 @@ for ($j=0; $j<6; $j++){
 }
 print_r($temp);
 
-//Задание 4 стр 15
-echo '<hr>';
-echo 'Задание 4';
-echo '<br>';
+for ($i=0; $i <3; $i++ ){
+    $pr = $temp[$i] * $pr;
 
-$arr13 =[
-    ['aa', 'bb', 'cc', 'dd', 'ff'],
-    ['vc', 'bc', 'sd', 'fd', 'ss'],
-    ['ss', 'ff', 'sa', 'ad', 'fd']
-
-];
-foreach ($arr13 as $value){
-    $str= implode($value);
-    $search = strpos($str, 'b');
-
-    if ($search!=0){
-        echo $search;
-    }
-    echo $str;
-    echo $search;
 }
-$str = implode(' ', $arr13);
-$s = strpos($str, 'b');
-echo $s;
+echo 'Произведение равно: ' . $pr;
 
+////Задание 4 стр 15
+//echo '<hr>';
+//echo 'Задание 4';
+//echo '<br>';
+//
+//$arr13 =[
+//    ['aa', 'bb', 'cc', 'dd', 'ff'],
+//    ['vc', 'bc', 'sd', 'fd', 'ss'],
+//    ['ss', 'ff', 'sa', 'ad', 'fd']
+//
+//];
+//foreach ($arr13 as $value){
+//    $str= implode($value);
+//    $search = strpos($str, 'b');
+//
+//    if ($search!=0){
+//        echo $search;
+//    }
+//    echo $str;
+//    echo $search;
+//}
+//$str = implode(' ', $arr13);
+//$s = strpos($str, 'b');
+//echo $s;
+
+?>
+
+<?php
+include_once '../inc/footer.php';
+?>

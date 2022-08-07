@@ -1,7 +1,11 @@
 
 <?php
 include_once 'inc/header.php';
+session_start();
+$_COOKIE['page'] = 'table.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
 ?>
+<main>
 <table border="1">
     <tr align="center">
        <td width="100px" bgcolor="red">
@@ -158,6 +162,7 @@ https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D0%BD%D0%BA">Zn</a> </div>
     </tr>
 
 </table>
+</main>
 <?php
 include_once 'inc/footer.php';
 ?>

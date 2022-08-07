@@ -1,4 +1,9 @@
 <?php
+include_once '../inc/header.php';
+$_COOKIE['page'] = 'lesson 9-10.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+?>
+<?php
 
 //Задача 1
 //Создать функцию, которая сравнивает два числа и возвращает наибольшее.
@@ -70,7 +75,7 @@ function random_array($a){
 $arr = random_array(25);
 echo '<pre>';
 print_r($arr);
-
+echo '</pre>';
 //Задача 5
 //Создать функцию, которая принимает массив и возвращает
 //среднеарифметическое значение массива.
@@ -107,6 +112,9 @@ function count_word($string){
 
 echo count_word($string);
 
+echo '<hr>';
+echo "Задача 7";
+echo '<br>';
 
 //Задача 7
 //Написать функцию, которая рассчитывает последовательность чисел Фибоначчи.
@@ -123,7 +131,7 @@ function fib($n)
 }
 echo "<pre>";
 print_r(fib(20));
-
+echo '</pre>';
 //Задача 1
 //Создайте функцию, которая принимает одномерный массив и возвращает массив, заполненный случайными числами.
 echo '<hr>';
@@ -162,25 +170,30 @@ echo count_word1($str);
 
 //Задача 3
 //Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет в обратном порядке буквы («XIRTIB ,PHP … »).
-echo '<hr>';
-echo "Задача 3 не поня в чем ошибка";
-echo '<br>';
+//echo '<hr>';
 
-$string = "HTML, CSS, PHP, BITRIX";
-function revers($str){
-
-    $arr1 = [];
-    $arr2 = [];
-    $len= mb_strlen($str);
-    $j =  $len;
-    $arr1 = explode(', ', $str);
-    for ($i=0; $i <= $len; $i++, $j--){
-        $arr2[$i] = $arr1[$j];
-    }
-    $str1 = implode( ', ', $arr2);
-    return $str1;
-}
-echo revers($string);
+//echo '<br>';
+//
+//$string = "HTML, CSS, PHP, BITRIX";
+//function revers($str){
+//
+//    $arr1 = [];
+//    $arr2 = [];
+//    $len= mb_strlen($str);
+//    $j =  $len;
+//    $arr1 = explode(', ', $str);
+//
+//    for ($i=0; $i <= $len; $i++, $j--){
+//        $arr2[$i] = $arr1[$j];
+////        echo $arr1[$j];
+//    }
+//
+//    $str1 = implode( ', ', $arr2);
+//    return $str1;
+//
+//}
+//
+//echo revers($string);
 
 //Задача 4
 //Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет на экран длину строки.
@@ -218,3 +231,8 @@ function view_str($str){
 }
 }
 view_str($string);
+?>
+
+<?php
+include_once '../inc/footer.php';
+?>

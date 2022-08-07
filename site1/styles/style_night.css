@@ -121,7 +121,9 @@ h2 {
 .login{
     grid-area: login;
     text-align: center;
+    position: relative;
     margin: auto;
+    font-size: 25px;
 }
 .logo{
     grid-area: logo;

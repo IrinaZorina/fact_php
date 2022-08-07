@@ -1,3 +1,12 @@
+
+<?php
+$_COOKIE['page'] = 'lesson 3-4.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+include_once '../inc/header.php';
+
+?>
+<p>PHP - Управляющие конструкции</p>
+<p>Урок 3-4</p>
 <?php
 
 //задание 1
@@ -118,3 +127,12 @@ for ($b = 0; $b <= 10-$i; $b++){
     echo $b;
 
 }
+
+?>
+
+<main>
+
+</main>
+<?php
+include_once '../inc/footer.php';
+?>

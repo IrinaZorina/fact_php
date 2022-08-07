@@ -1,5 +1,15 @@
 <?php
 include_once 'inc/header.php';
+session_start();
+$_COOKIE['page'] = 'index.php';
+setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+if(isset($_POST['color'])){
+    $_SESSION['color'] = $_POST['color'];
+    $color = $_SESSION['color'];
+}
+
+
+
 ?>
 
 <?php
@@ -42,8 +52,9 @@ function count_word($string){
 ?>
 
 
+
 <main>
-    <div class="icon">
+    <div class="icon" style= "margin-bottom: -21px">
         <?php
         change_theme();
         ?>
@@ -51,6 +62,10 @@ function count_word($string){
     </div>
 
     <div class="frame">
+        <form action="" method="post">
+             <h1 style="margin-left: 10%" >Здесь можно выбрать цвет фона</h1> <input type="color" style = "margin-left: 10%" name="color">
+            <input type="submit">
+        </form>
     </div>
 
 <section class="grid_blok3">
@@ -94,7 +109,7 @@ function count_word($string){
                 $str = $str . ' ' . $str0;
             }
             if ($i%2 == 1){
-                $str1 = "<span style='color:#7d9840'>$value</span>";
+                $str1 = "<span style='color:#407398'>$value</span>";
                 $str = $str . ' ' . $str1;
             }
 //
