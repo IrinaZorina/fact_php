@@ -18,10 +18,10 @@ $res= array_intersect($arr1,$arr);
 $res= implode('.', $res);
 
 
-if(!file_exists("4text.txt")){
-   file_put_contents('4text.txt',$res);
+if(!file_exists("3text.txt")){
+   file_put_contents('3text.txt',$res);
 }
-$c = file_get_contents('4text.txt'); 
+$c = file_get_contents('3text.txt'); 
 
 echo '<br>';
 
