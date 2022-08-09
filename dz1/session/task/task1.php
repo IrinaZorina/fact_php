@@ -11,7 +11,7 @@ session_start();
 <body>
 <form action="task2.php" method="post">
   <p>
-    Имя <input type="text" name="ex1"><br>
+    Имя <input type="text" name="n1"><br>
   </p>
     <p>
     <button type="submit">Дальше</button>
