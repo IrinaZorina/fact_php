@@ -1,0 +1,42 @@
+body{
+    margin: 0px;
+    background-color: rgb(19, 18, 18);
+}
+table{
+  margin: auto;
+}
+caption{
+  color: aliceblue;
+}
+.item-a {
+  text-align: right;
+  grid-area: header;
+}
+.item-b {
+  font-size: 55px;
+  margin: 0px;
+  grid-area: main;
+}
+.item-c {
+  text-align: right;
+  grid-area: sidebar;
+}
+.item-d {
+ grid-area: footer;
+ 
+}
+ 
+
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+  '. . . . header'
+  'main main . . sidebar'
+  'footer footer footer footer footer';
+}
+  a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
