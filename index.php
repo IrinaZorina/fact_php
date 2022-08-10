@@ -6,6 +6,12 @@ $day = strftime('%d');
 $mon = strftime('%B');
 $mon = iconv('windows-1251', 'utf-8', $mon);
 $year = strftime('%Y');
+
+if (isset($_POST['color'])){
+    $color=$_POST['color'];
+    setcookie('color', $color , time()+3600*24*7);
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +167,7 @@ $year = strftime('%Y');
         </section>
     </div>
     <footer>
+
 <?php
         echo "<br>";
         function Vowels_Words($str){
@@ -180,7 +187,37 @@ $year = strftime('%Y');
         }
         Vowels_Words($str);
         ?>
+<?php
 
+if ($_POST['color']=="darkgray"){
+    $clr = 'darkgray';
+}elseif ($_POST['color']=="pink"){
+    $clr = 'pink';
+}elseif ($_POST['color']=="darkolivegreen"){
+    $clr = 'darkolivegreen';
+}elseif ($_POST['color']=="lightskyblue"){
+    $clr = 'lightskyblue';
+}elseif (!isset($_POST['color'])){
+    $clr=$_COOKIE['color'];
+}
+?>
+        <body style="background-color: <?php echo $clr; ?>"></body>
+        <form action="" method="post">
+            <p>
+                <label>
+                    chose:
+                </label>
+                <select name="color">
+                    <option class="gr" value="darkgray">Gray(default)</option>
+                    <option class="te" value="pink">Pink</option>
+                    <option class="te" value="darkolivegreen">Green</option>
+                    <option class="blue" value="lightskyblue">Blue</option>
+                </select>
+            </p>
+            <p>
+                <button type="submit">send</button>
+            </p>
+        </form>
     </footer>
 </main>
 </body>

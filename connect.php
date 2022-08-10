@@ -8,7 +8,7 @@ if (isset($_POST['sub'])){
     $admin_pass = "123";
     if($log == $admin_log && $pass == md5($admin_pass)){
         $pass = md5($pass);
-        header('Location: index.php');
+//        header('Location: index.php');
         $_SESSION['user'] = 'Welcome, ' . $admin_log . '!';
         header('Location: index.php');
     }else {
