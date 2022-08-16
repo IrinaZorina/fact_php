@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: darkgray;
+}
+body{
+    height: 100vh;
+    font-family: Candara, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+input{
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 2px solid teal;
+    outline: none;
+}
+.message{
+    border: 2px solid pink;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+
+}
+.Registration{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    color: blue;
+    padding-top: 10px;
+}
+::-webkit-input-placeholder {
+    color: teal;
+}
+.Back_to_page{
+    color: cornflowerblue;
+    text-align: right;
+}

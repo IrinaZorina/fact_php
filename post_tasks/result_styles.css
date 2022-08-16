@@ -1,0 +1,10 @@
+.border{
+    padding: 10px;
+    border: 2px blue solid;
+    border-radius: 10px;
+    text-align: center;
+
+}
+.h1_text{
+    text-align: center;
+}
