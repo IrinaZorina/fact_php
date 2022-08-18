@@ -3,14 +3,24 @@ echo '<hr>';
 echo "задача 6";
 echo '<br>';
 session_start();
-$_SESSION['time'] = date('Y-m-d H:i:s');
-session_abort();
+//$_SESSION['time'] = date('Y-m-d H:i:s');
+$_SESSION['time'] = time();
+//session_abort();
 
  $val = isset($_GET['val']) ? $_GET['val'] : '';
 
 if ($_GET['val'] == null) {
-    $val = "'Тут должно быть имя'";
+    $val = null;
 }
+
+if ($val != null) {
+    $_SESSION['time1'] = time();
+}
+
+$result =  $_SESSION['time'] - $_SESSION['time1'];
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,11 +33,13 @@ if ($_GET['val'] == null) {
 </head>
 <body>
 <h1>
-    <?php echo $val ?>, последний раз вы заходили <?php echo $_SESSION['time'] ?>
+    <?php if ($val == null){echo "No name"; }else {echo $val;} ?>, последний раз вы заходили <?php echo $result ?> секунд назад
 </h1>
+
 <form action="">
-    Введите логин <input type="text" name="val" value="<?php echo $val?>">
+    <input type="text" name="val" value="<?php echo $val?>" placeholder="введите имя">
     <input type="submit">
 </form>
+Входом считается ввод имени, да сброса счетчика ввести имя и перезайти на страницу
 </body>
 </html>

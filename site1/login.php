@@ -1,26 +1,36 @@
 <?php
+session_start();
 include_once 'inc/header.php';
-//$_COOKIE['page'] = 'indexqq.php';
+include_once 'bd_conn.php';
+include_once 'auth.php'
 ?>
 <?php
-session_start();
-setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
+
+setcookie('page', $_COOKIE['page'], time() +3600 );
 $login1 = null;
 $pass1 = null;
-$login0 = '21232f297a57a5a743894a0e4a801fc3';// admin
-$pass0 = '21232f297a57a5a743894a0e4a801fc3';// admin
+
 if (isset($_POST['login']) and isset($_POST['password'])){
     $_SESSION['login1'] = md5($_POST['login']);
     $_SESSION['pass1'] = md5($_POST['password']);
 }
+$auth1 = new auth();
+    $auth1 ->login_1 = $_SESSION['login1'];
+    $auth1 ->pass_1 = $_SESSION['pass1'];
+//проверяю пользователя и пароль в базе
+// login = admin, pass = admin
+$rows_found = $auth1 ->check_user();
+//echo $rows_found;
+//var_dump($auth1);
 
-if (($_SESSION['login1']  == $login0) and $_SESSION['pass1'] == $pass0){
-
-    include_once 'login_ok.php';
-//    echo "Добро пожаловать";
-    echo "<br>";
-}else
+if ($rows_found > 0){
+        include_once 'login_ok.php';
+//        echo "Добро пожаловать";
+//         echo "<br>";
+}else{
     include_once 'login_error.php';
+}
+
 ?>
 
 <main>
@@ -37,6 +47,9 @@ if (($_SESSION['login1']  == $login0) and $_SESSION['pass1'] == $pass0){
         <br>
         <br>
         <button style="width: 455px;">Войти</button>
+        <br>
+        <br>
+        <a href="logout.php"><h3>Выход</h3></a>
 
     </form>
     </div>

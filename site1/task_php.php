@@ -23,10 +23,10 @@ setcookie('page', $_COOKIE['page'], time() +3600*24*7 );
     <p><a href="php/lesson%209-10.php">PHP - Функции</a></p>
     <p>Урок 9-10</p>
 
-    <p><a href="php/lesson%2011-12/lesson%2011-12.php">Работа с данными от клиента GET POST</a></p>
+    <p><a href="php/lesson%2011-12.php">Работа с данными от клиента GET POST</a></p>
     <p>Урок 11-12</p>
 
-    <p><a href="php/lesson%2013-14/lesson%2013-14.php">Работа с данными от клиента</a></p>
+    <p><a href="php/lesson%2013-14.php">Работа с данными от клиента</a></p>
     <p>Урок 13-14</p>
     <br>
 
