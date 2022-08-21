@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "aside fio fio fio"
+    "aside information information like"
+    "footer footer footer footer";
+
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    gap:10px;
+
+    align-self: center;
+    justify-self: center;
+
+
+}
+
+header {
+    
+    grid-area: header;
+    color: #000000;
+    background-color: #fff;
+    border: 5px solid black;
+    margin: 10px 0px;
+    text-align: center;
+    
+    
+
+}
+
+
+
+aside {
+    grid-area:aside;
+    grid-template-columns: 1fr;
+    border: 3px solid black;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#fio {
+    grid-area: fio;
+    grid-template-columns: 3fr;
+    border: 3px solid black;
+    gap:10px;
+}
+
+#information {
+    grid-area: information;
+    border: 3px solid black;
+    gap:10px;
+}
+
+#like {
+    grid-area: like;
+    border: 3px solid black;
+    gap:10px;
+}
+
+footer {
+    grid-area: footer;
+    border: 3px solid black;
+    gap:10px;
+}
+
+h1 {
+    text-align: center;
+    margin: 5vh;
+    border: 3px dotted green;
+}
+
+
+p {
+    text-align: center;
+    margin: 10vh;
+    
+}
+
+
+h1, h2, h3, h4 {
+    text-align: center;
+    /**/
+    /* border: 3px dotted green; */
+}

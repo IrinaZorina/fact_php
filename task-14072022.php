@@ -20,6 +20,7 @@
 
 <nav>
     <div class="nav_item"><a href="index.php">ГЛАВНАЯ</a></div>
+    <div class="nav_item"><a href="about/about.php">ОБО МНЕ</a></div>
     <div class="nav_item"><a href="picture.php">КАРТИНКА (утро/ночь)</a></div>
     <div class="nav_item"><a href="tasks1-4.php">ЗАДАНИЕ (1-4)</a></div>
     <div class="nav_item"><a href="task-14072022.php">ДОП. ЗАДАНИЯ ПО PHP</a></div>
@@ -313,6 +314,7 @@ if ($handle = opendir('/OpenServer/domains/php-fact/')) {
     }
 
     closedir($handle);
+    //Сделано
 }
 
 ?>
