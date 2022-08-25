@@ -314,7 +314,7 @@ if ($handle = opendir('/OpenServer/domains/php-fact/')) {
     }
 
     closedir($handle);
-    //Сделано
+    //Сделано окей
 }
 
 ?>

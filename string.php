@@ -313,6 +313,8 @@ $text_arr = preg_split('//u', $text_string, -1, PREG_SPLIT_NO_EMPTY);
 $length = count($text_arr);
 echo  $length;
 //Сделано
+
+//ПО СТРОКАМ С ОФОРМЛЕНИЕМ РАБОТЫ КОДА В ФУНКЦИЯХ, СДЕЛАЮ ЧУТЬ ПОЗЖЕ
 ?>
 
 </body>

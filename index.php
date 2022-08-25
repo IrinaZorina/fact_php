@@ -69,6 +69,10 @@ $name = 'Yuriy';
 $age = '36';
 $pi = define('PI', 3.14);
 
+function nameage($name, $age, $pi) {
+echo "$name, $age, $pi";
+}
+
 //Сделано
 ?>
 
@@ -79,6 +83,10 @@ $pi = define('PI', 3.14);
 
 <h3><?php echo PI ?></h3>
 
+<h3>Вывод с помощью вызова функции</h3>
+<p>Вроде все ок. </p>
+
+<p><?php nameage('Yuriy2 ', 115, 3.14) ?></p>
 
 
 

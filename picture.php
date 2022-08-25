@@ -13,21 +13,29 @@
 
 //Необходимо задать изменение картинки у всего сайта (body), если день - дневная картинка, если ночь - то ночная картинка.
 
-$b_color = "";
-$time2 = date("G");
-echo gettype($time2)."<br>";
-echo "Вывод метки времени, функции time: <br>";
-print_r($time2);
 
-if ($time2 >= 7 && $time <= 19) {
-    $b_color = "yellow";
-} else {
-    $b_color = "grey";
+
+function changebody () {
+    $time2 = date("G");
+
+//    echo gettype($time2)."<br>";
+//    echo "Вывод метки времени, функции time: <br>";
+//    print_r($time2);
+
+    if ($time2 >= 7 && $time2 <= 19) {
+        $color = "yellow";
+        return $color;
+    } else {
+        $color = "grey";
+        return $color;
+    }
 }
+
+
 
 ?>
 
-<body style="background-color: <? echo $b_color; ?>">
+<body style="background-color: <? changebody(); ?>">
 
 <header>
     <h1>ВЫПОЛНЕНИЕ ЗАДАНИЙ ПО PHP</h1>
@@ -50,19 +58,27 @@ if ($time2 >= 7 && $time <= 19) {
     <h2>ВЫВОД КАРТИНКИ</h2>
 
     <?php
-    $time = getdate();
-    $current_time = $time['hours'];
-    echo "Текущее время: " . $current_time;
+    function changepicture($yourtime) {
+//        $time = getdate();
+//        $current_time = $time['hours'];
+//        echo "Текущее время: " . $current_time;
 
-    if($current_time <= 8 AND $current_time >=20){
-        $img = 'img/night-image.jpg';
-    } else {
-        $img = 'img/day-image.jpg';
+        if($yourtime <= 8 AND $yourtime >=20){
+            $img = 'img/night-image.jpg';
+            echo $img;
+        } else {
+            $img = 'img/day-image.jpg';
+            echo $img;
+        }
+
+        //Сделано
+        //Но почему-то не меняется картинка.
     }
-    //Сделано
+
+
     ?>
 
-    <img src="<?php echo $img; ?>">
+    <img src="<?php changepicture(5); ?>">
 
 </section>
 
